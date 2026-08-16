@@ -49,6 +49,17 @@ Host github.com
     name = work-git-username
     email = pavan.kataria@example.com or anonymous git email
 ```
+**Configure local git repo to use ssh**
+
+Use the host as defined in ~/.ssh/config
+
+For example `github.com-work`
+
+```bash
+# Use ssh to connect to github. Execute in repo root:
+git remote set-url origin git@github-work.com:work-user/repo.git
+# or edit .git/config directly
+```
 
 ## set new token
 ```bash
