@@ -1,5 +1,10 @@
 # Docker Cheat Sheet
 
+## Start Shell in Running Container
+
+```bash
+docker compose exec <service-name> sh 
+```
 ## Images
 
 ```bash

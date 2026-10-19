@@ -23,14 +23,14 @@ Azure recommends az acr login for interactive developer pushes. ACR authenticati
 
 Use an immutable release tag:
 
-PII_IMAGE_TAG=2026-09-23-arm64-1
-PII_IMAGE_REF=rwaicont.azurecr.io/tp_pii_service:${PII_IMAGE_TAG}
+export IMAGE_TAG=2026-09-23-arm64-1
+export IMAGE_REF=beconncr-edgwfcbcbberhjgc.azurecr.io/pii-service:${IMAGE_TAG}
 
 Build for DGX Spark and push directly to ACR:
 
 docker buildx build \
 --platform linux/arm64 \
---tag "${PII_IMAGE_REF}" \
+--tag "${IMAGE_REF}" \
 --push \
 .
 
