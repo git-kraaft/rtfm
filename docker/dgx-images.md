@@ -57,8 +57,7 @@ az acr repository show-tags \
 
 Authenticate the DGX with ACR:
 
-az login
-az acr login --name rwaicont
+az acr login --name beconncr
 
 Or use your production service principal, managed identity, or ACR token with docker login.
 
