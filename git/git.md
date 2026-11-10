@@ -1,7 +1,54 @@
 # Git
+
 ```bash
 git clone
 git push
+```
+## Remove staged files (accidentally added)
+
+```bash
+# remove folder .idea from git
+git restore --staged .idea 
+```
+
+## Add tags to an existing commit
+
+```bash
+git tag -a v0.1.0 432c968 -m "Production baseline before Python 3.14 and redaction"
+```
+-a: Steht für annotated (annotiert). Dies weist Git an, ein vollständiges Tag-Objekt in der Git-Datenbank zu erstellen. Ein annotiertes Tag enthält (im Gegensatz zu einem "Lightweight"-Tag) das Datum, den Namen und die E-Mail-Adresse des Erstellers sowie eine eigene Beschreibung.
+
+## Create a new Branch and Switch to it
+
+```bash
+git switch -c release/1.0.0 
+```
+
+```bash
+git switch release/1.0.0
+```
+
+### Switch do a newly created branch on a remote machine, ignoring modified files
+
+```bash
+#Fetch the latest branches from GitHub
+git fetch origin
+
+git reset --hard HEAD
+git switch -C my-feature-branch origin/my-feature-branch
+```
+
+Why git switch -C?
+- Creates the local branch if it doesn't exist.
+- Resets the existing local branch to the specified remote commit if it does exist.
+- Switches to that branch.
+- Does not merge or rebase anything.
+  The preceding git reset --hard HEAD discards local tracked modifications so switching can proceed cleanly.
+
+Finally, verify:
+```bash
+git status
+git branch -vv
 ```
 
 ## SSH Login and using 2 accounts the same machine
