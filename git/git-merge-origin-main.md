@@ -13,9 +13,24 @@ Use **Merge** to bring the latest changes from GitHub's `main` branch into your 
 
 ```bash
 git switch feature/my-feature
+
+# Download latest remote changes
 git fetch origin
+
+# Merge latest main into current branch
 git merge origin/main
+
+# Push updated feature branch
 git push origin feature/my-feature
 ```
 
 > **Note:** You don't need to check out or update your local `main`. This merges `origin/main` **into your feature branch**, not the other way around.
+
+## A few things worth remembering
+- You do not need to check out main or update your local main first.
+- git fetch origin does not modify your working files.
+- Merging origin/main brings GitHub's latest fetched main commits into your current branch.
+- You can repeat this process whenever main receives new changes.
+  My recommendation: Stick with Fetch → Merge origin/main → Test → Push for your long-lived feature branch. It's straightforward, safe, and doesn't rewrite existing commits.
+
+One distinction worth knowing: if your team prefers a linear Git history and your feature branch is private to you, rebase onto origin/main may be a better choice. But merging is a good default.
