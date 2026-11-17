@@ -22,7 +22,10 @@ Install the dependencies declared in pyproject.toml:
 ```bash
 uv sync
 ```
-
+Install the dependencies declared in requirements.txt
+```bash
+ uv pip sync requirements-dev.txt 
+```
 uv sync also creates/updates uv.lock, so future installs can be reproduced exactly. To install optional development dependencies too, use:
 ```bash
 uv sync --all-groups
