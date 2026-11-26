@@ -74,12 +74,14 @@ Host github.com-beconn
   HostName github.com
   User git
   IdentityFile ~/.ssh/stefan.kraft+2026@beconn.ch
+  IdentitiesOnly yes
 
 # private github
 Host github.com
   HostName github.com
   User git
   IdentityFile ~/.ssh/git-kraaft+2026
+  IdentitiesOnly yes
 ```
 **Update ~/.gitconfig**
 
